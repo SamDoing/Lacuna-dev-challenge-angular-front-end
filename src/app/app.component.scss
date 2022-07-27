@@ -1,0 +1,18 @@
+.header {
+  padding: 16px;
+  background-color: rgb(170, 158, 139);
+}
+
+.nav {
+  text-align: end;
+  &__link {
+    text-decoration: none;
+    color: black;
+    margin: 0px 0.3rem;
+    font-weight: bolder;
+  }
+
+  .active {
+    display: none;
+  }
+}

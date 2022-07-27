@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #42b3cf;
+  --secondary: #132A13;
+  --padding: 15px;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+}
+
+.container {
+  max-width: 50vmax;
+  padding:  30px;
+  margin: 0 auto;
+}

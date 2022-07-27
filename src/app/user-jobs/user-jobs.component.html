@@ -1,0 +1,41 @@
+<section class="container">
+  <div class="table-wrapper">
+    <div class="title-wrapper">
+      <h2 class="title">{{username}} Jobs</h2>
+      <div class="button-wrapper">
+        <button class="button" (click)="getJob()"
+         *ngIf="!isGetLoading; else loader">Get Job</button>
+      </div>
+    </div>
+    <table class="table">
+      <thead class="table__header">
+        <th class="table__header__content">ID</th>
+        <th class="table__header__content">Type</th>
+        <th class="table__header__content">Action</th>
+      </thead>
+      <tbody *ngIf="!!jobs; else emptyList">
+        <tr class="table__line" *ngFor="let job of jobs">
+          <td class="table__content">
+            {{ job.id }}
+          </td>
+          <td class="table__content">{{ job.type }}</td>
+          <td class="table__content">
+            <div *ngIf="!job.done; else jobDone">
+              <button class="button" (click)="doJob(job)"
+               *ngIf="!job.doing; else loader">Do Job</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #emptyList>
+      <p>There is no jobs here</p>
+    </ng-template>
+    <ng-template #jobDone>
+      <p class="done">Done!</p>
+    </ng-template>
+    <ng-template #loader>
+      <app-loading></app-loading>
+    </ng-template>
+  </div>
+</section>

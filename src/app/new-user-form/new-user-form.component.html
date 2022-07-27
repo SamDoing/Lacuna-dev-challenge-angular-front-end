@@ -1,0 +1,23 @@
+<section class="container">
+  <form class="form" (ngSubmit)="submit()">
+    <h2 class="form__title">New User</h2>
+    <div class="form-field">
+      <label class="form-field__label" for="username">Username</label>
+      <input class="form-field__input" id="username" type="text" [(ngModel)]="username" name="username"/>
+    </div>
+    <div class="form-field">
+      <label class="form-field__label" for="email">Email</label>
+      <input class="form-field__input" id="email" type="email" [(ngModel)]="email" name="email"/>
+    </div>
+    <div class="form-field">
+      <label class="form-field__label" for="password">Password</label>
+      <input class="form-field__input" id="password" type="password" [(ngModel)]="password" name="password"/>
+    </div>
+    <div class="button-wrapper" >
+      <button class="button" type="submit" *ngIf="!isLoading; else loader">Submit</button>
+      <ng-template #loader>
+        <app-loading></app-loading>
+      </ng-template>
+    </div>
+  </form>
+</section>

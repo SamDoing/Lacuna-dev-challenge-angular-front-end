@@ -1,0 +1,26 @@
+<section class="container">
+  <div class="table-wrapper">
+    <h2 class="title">Users</h2>
+    <table class="table">
+      <thead class="table__header">
+        <th class="table__header__content">ID</th>
+        <th class="table__header__content">Username</th>
+        <th class="table__header__content">Action</th>
+      </thead>
+      <tbody *ngIf="!!users; else emptyList">
+        <tr class="table__line" *ngFor="let user of users">
+          <td class="table__content">
+            {{ user.id }}
+          </td>
+          <td class="table__content">{{ user.username }}</td>
+          <td class="table__content">
+            <button class="button" (click)="open(user)">Jobs</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #emptyList>
+      <p>There is no users here</p>
+    </ng-template>
+  </div>
+</section>
